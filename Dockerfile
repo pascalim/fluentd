@@ -10,8 +10,10 @@ RUN apk add --no-cache --virtual .fluent-deps \
       build-base \
       ruby-dev \
     && sudo -u fluent gem install \
-      fluent-plugin-grep \
+      fluent-plugin-concat \
       fluent-plugin-elasticsearch \
+      fluent-plugin-grep \
+      fluent-plugin-multiline-parser \
     && rm -rf /home/fluent/.gem/ruby/2.3.0/cache/*.gem \
     && sudo -u fluent gem sources -c \
     && apk del .fluent-deps
